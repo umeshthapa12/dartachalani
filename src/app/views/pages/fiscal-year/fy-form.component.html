@@ -1,0 +1,36 @@
+<form class="kt-portlet mb-0 shadow-none" [formGroup]="fyForm" (ngSubmit)="saveChanges()" autocomplete="off">
+    <div matDialogTitle class="kt-portlet__head px-0">
+        <div class="kt-portlet__head-label">
+            <h3 class="kt-portlet__head-title">
+                आर्थिक वर्ष थप्नुहोस्
+                <!-- {{data.id > 0 ? 'आर्थिक वर्ष परिबर्तन गर्नुहोस्': 'आर्थिक वर्ष थप्नुहोस्'}} -->
+            </h3>
+        </div>
+        <div class="kt-portlet__head-toolbar">
+            <div class="kt-portlet__head-group">
+                <button matTooltip="Close" (click)="cancel()" type="button"
+                    class="btn btn-sm btn-icon btn-clean btn-icon-md"><i class="la la-close"></i></button>
+            </div>
+        </div>
+    </div>
+    <div class="row" matDialogContent>
+        <div class="col-md-12">
+            <mat-form-field appearance="outline">
+                <mat-label>आर्थिक वर्ष</mat-label>
+                <input matInput formControlName="name" placeholder="आर्थिक वर्ष" required>
+                <mat-error class="kt-font-danger" *ngIf="displayMessage?.name">{{displayMessage?.name}}</mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div style="display: flex; width:100%; justify-content: center">
+        <div>
+            <button matTooltipPosition="above" matTooltip="सुरक्षित राख्नुहोस्" type="submit"
+                class="btn btn-primary">सुरक्षित
+                राख्नुहोस्</button>
+            <button matTooltipPosition="above" matTooltip="बन्द गर्नुहोस्" (click)="cancel()" type="button"
+                class="btn btn-danger mr-1 ml-1">बन्द गर्नुहोस्</button>
+        </div>
+    </div>
+
+</form>
